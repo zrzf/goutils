@@ -8,54 +8,54 @@ import (
 const Esc string = "\033["
 //	Foregrounds
 const (
-	Black = Esc + "30m"
-	Red = Esc + "31m"
-	Green = Esc + "32m"
-	Yellow = Esc + "33m"
-	Blue = Esc + "34m"
-	Magenta = Esc + "35m"
-	Cyan = Esc + "36m"
-	White = Esc + "37m"
-	Gray = Esc + "38m"
-	BrightRed = Esc + "39m"
-	BrightYellow = Esc + "40"
-	BrightBlue = Esc + "41m"
-	BrightMagenta = Esc + "42m"
-	BRightCyan = Esc + "43m"
-	BrightWhite = Esc + "44m"
+	Black = string(Esc) + string('0'+(iota+30)/10%10) + string('0'+iota/1%10) + string("m")
+	Red
+	Green
+	Yellow
+	Blue
+	Magenta
+	Cyan
+	White
+	Gray
+	BrightRed
+	BrightYellow
+	BrightBlue
+	BrightMagenta
+	BRightCyan
+	BrightWhite
 )
 
 //	Backgrounds
 const (
-	BBlack = Esc + "40m"
-	BRed = Esc + "41m"
-	BGreen = Esc + "42m"
-	BYellow = Esc + "4m3"
-	BBlue = Esc + "44m"
-	BMagenta = Esc + "45m"
-	BCyan = Esc + "46m"
-	BWhite = Esc + "47m"
-	BGray = Esc + "48m"
-	BBrightRed = Esc + "49m"
-	BBrightYellow = Esc + "50m"
-	BBrightBlue = Esc + "51m"
-	BBrightMagenta = Esc + "52m"
-	BBRightCyan = Esc + "53m"
-	BBrightWhite = Esc + "54m"
+	BBlack = string(Esc) + string('0'+(iota+40)/10%10) + string('0'+iota/1%10) + string("m")
+	BRed
+	BGreen
+	BYellow
+	BBlue
+	BMagenta
+	BCyan
+	BWhite
+	BGray
+	BBrightRed
+	BBrightYellow
+	BBrightBlue
+	BBrightMagenta
+	BBRightCyan
+	BBrightWhite
 )
 
 // Styles
 const (
-	End = Esc + "0m"
-	Bold = Esc + "1m"
-	Faint = Esc + "2m"
-	Italic = Esc + "3m"
-	Underline = Esc + "4m"
-	SlowBlink = Esc + "5m"
-	RapidBlink = Esc + "6m"
-	Invert = Esc + "7m"
-	Hide = Esc + "8m"
-	Strike = Esc + "9m"
+	End = string(Esc) + string('0'+(iota+0)/10%10) + string('0'+iota/1%10) + string("m")
+	Bold
+	Faint
+	Italic
+	Underline
+	SlowBlink
+	RapidBlink
+	Invert
+	Hide
+	Strike
 
 	Overlined = Esc + "53m"
 )
