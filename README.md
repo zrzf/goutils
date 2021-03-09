@@ -1,13 +1,13 @@
 # goutils
 
-***You can install every package with*** ```go get github.com/zrzf/goutils```
-- [semaphore](#semaphore)   ```go get github.com/zrzf/goutils/semaphore```
-- [slices](#slices)         ```go get github.com/zrzf/goutils/slices```
-- [color](#color)           ```go get github.com/zrzf/goutils/color```
-- [cursor](#cursor)         ```go get github.com/zrzf/goutils/cursor```
-- [file](#file)             ```go get github.com/zrzf/goutils/file```
-- [looper](#looper)         ```go get github.com/zrzf/goutils/looper```
-- [strings](#strings)       ```go get github.com/zrzf/goutils/strings```
+```go get github.com/zrzf/goutils```
+- [semaphore](#semaphore)
+- [slices](#slices)
+- [color](#color)
+- [cursor](#cursor)
+- [file](#file)
+- [looper](#looper)
+- [strings](#strings)
 
 # semaphore
 ```go
