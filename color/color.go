@@ -7,7 +7,7 @@ import (
 const Esc string = "\033["
 
 const (
-	End = Esc + string('0'+iota/10%10) + string('0'+iota/1%10) + "m"
+	End = Esc + string('0'+iota/10%10) + string('0'+iota/1%10) + "m" // = Esc + iota + "m"
 	Bold
 	Faint
 	Italic
@@ -90,13 +90,13 @@ const (
 )
 
 const (
-	Superscript = Esc + string('0'+(iota+73)/10%10) + string('0'+(iota+73)/1%10) + "m"
+	Superscript = Esc + string('0'+(iota+73)/10%10) + string('0'+(iota+73)/1%10) + "m" // = Esc + iota+73 + "m"
 	Subscript
 )
 
 const (
 	//--------------Bright Foregrounds-----
-	BrightBlack = Esc + string('0'+(iota+90)/100%10) + string('0'+(iota+90)/10%10) + string('0'+(iota+90)/1%10) + "m"
+	BrightBlack = Esc + string('0'+(iota+90)/100%10) + string('0'+(iota+90)/10%10) + string('0'+(iota+90)/1%10) + "m" // = Esc + iota+90 + "m"
 	BrightRed
 	BrightGreen
 	BrightYellow
