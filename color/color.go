@@ -8,6 +8,7 @@ import (
 const Esc string = "\033["
 //	Foregrounds
 const (
+	//	Esc + iota+30 + "m"
 	Black = string(Esc) + string('0'+(iota+30)/10%10) + string('0'+iota/1%10) + string("m")
 	Red
 	Green
@@ -27,6 +28,7 @@ const (
 
 //	Backgrounds
 const (
+	//	Esc + iota+40 + "m"
 	BBlack = string(Esc) + string('0'+(iota+40)/10%10) + string('0'+iota/1%10) + string("m")
 	BRed
 	BGreen
@@ -46,6 +48,7 @@ const (
 
 // Styles
 const (
+	//	Esc + iota+0 + "m"
 	End = string(Esc) + string('0'+(iota+0)/10%10) + string('0'+iota/1%10) + string("m")
 	Bold
 	Faint
