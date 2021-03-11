@@ -51,7 +51,7 @@ slices.UniqueInt(&[1,2,3,3,1])
 >>> [1 2 3]
 ```
 ---
-```CountInt```, ```CountStr```
+```CountInt```, ```CountStr```, ```CountUint```
 ```go
 slices.CountInt([1,2,3,10,2,2], 2)]
 >>> 3
@@ -59,7 +59,7 @@ slices.CountInt([1,2,3],1,2) // You can also count multiple values
 >>> 2
 ```
 ---
-```FilterInt```, ```FilterStr```
+```FilterInt```, ```FilterStr```, ```FilterUint```
 ```go
 slices.FilterInt(&[1,2,3,10,2], 2)
 >>> [1 3 10]
