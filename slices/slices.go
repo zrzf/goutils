@@ -141,33 +141,45 @@ func UniqueUint(list *[]uint) {
 	*list = res
 }
 
-func CountStr(list []string, str string) int {
+func CountStr(list []string, str ...string) int {
 	var c int
 	for _, val := range list {
-		if val == str {
-			c++
+		for _, s := range str {
+			if val == s {
+				c++
+				break
+			}
 		}
 	}
 	return c
 }
 
-func CountInt(list []int, num int) int {
+func CountInt(list []int, num ...int) int {
 	var c int
 	for _, val := range list {
-		if val == num {
-			c++
+		for _, n := range num {
+			if val == n {
+				c++
+				break
+			}
 		}
 	}
 	return c
 }
 
-func FilterInt(list *[]int, filter int) {
+func FilterInt(list *[]int, filter ...int) {
 	var c int
-	s := make([]int, len(*list) - CountInt(*list, filter))
+	var add bool
+	s := make([]int, len(*list) - CountInt(*list, filter...))
 	for _, val := range *list {
-		if val == filter {
-			continue
-		} else {
+		add = true
+		for _, f := range filter {
+			if val == f {
+				add = false
+				break
+			}
+		}
+		if add {
 			s[c] = val
 			c++
 		}
@@ -175,19 +187,26 @@ func FilterInt(list *[]int, filter int) {
 	*list = s
 }
 
-func FilterStr(list *[]string, filter string) {
+func FilterStr(list *[]string, filter ...string) {
 	var c int
-	s := make([]string, len(*list) - CountStr(*list, filter))
+	var add bool
+	s := make([]string, len(*list) - CountStr(*list, filter...))
 	for _, val := range *list {
-		if val == filter {
-			continue
-		} else {
+		add = true
+		for _, f := range filter {
+			if val == f {
+				add = false
+				break
+			}
+		}
+		if add {
 			s[c] = val
 			c++
 		}
 	}
 	*list = s
 }
+
 
 func RangeInt(min int, max int) []int {
 	var i int
