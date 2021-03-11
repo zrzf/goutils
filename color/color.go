@@ -18,10 +18,9 @@ const (
 	Hide
 	Strike
 
-
 	//----------------------Fonts----------
-	Font0		// Default font
-	Font1		// Alternative fonts
+	Font0 // Default font
+	Font1 // Alternative fonts
 	Font2
 	Font3
 	Font4
@@ -33,7 +32,6 @@ const (
 	FontGothic
 	//-------------------------------------
 
-
 	DoubleUnderline
 	NormalIntensity
 	NoItalic
@@ -44,7 +42,6 @@ const (
 	Reveal
 	NoStrike
 
-
 	//----------------------Foregrounds----
 	Black
 	Red
@@ -54,10 +51,9 @@ const (
 	Magenta
 	Cyan
 	White
-	_	//RGB
+	_ //RGB
 	DefaultColor
 	//-------------------------------------
-
 
 	//----------------------Backgrounds----
 	BBlack
@@ -68,10 +64,9 @@ const (
 	BMagenta
 	BCyan
 	BWhite
-	_	//BRGB
+	_ //BRGB
 	DefaultBColor
 	//-------------------------------------
-
 
 	NoSpacing
 	Frame
@@ -79,7 +74,7 @@ const (
 	Overline
 	NoFrame
 	NoOverline
-	_	//URGB
+	_ //URGB
 	DefaultUnderlineColor
 	IdeogramUnderline
 	IdeogramDoubleUnderline
@@ -120,39 +115,37 @@ const (
 	//-------------------------------------
 )
 
-
 // Aliases
 const (
-	Reset = End
-	Normal = End
-	Font10 = FontGothic
-	Blackletter = FontGothic
-	NoBold = DoubleUnderline
+	Reset         = End
+	Normal        = End
+	Font10        = FontGothic
+	Blackletter   = FontGothic
+	NoBold        = DoubleUnderline
 	NoBlackletter = NoItalic
-	NoEncircle = NoFrame
+	NoEncircle    = NoFrame
 )
 
-
 func F8bit(n int) string {
-	return fmt.Sprintf("%s38;5;%dm",Esc,n)
+	return fmt.Sprintf("%s38;5;%dm", Esc, n)
 }
 
 func B8bit(n int) string {
-	return fmt.Sprintf("%s48;5;%dm",Esc,n)
+	return fmt.Sprintf("%s48;5;%dm", Esc, n)
 }
 
 func U8bit(n int) string {
-	return fmt.Sprintf("%s58;5;%dm",Esc,n)
+	return fmt.Sprintf("%s58;5;%dm", Esc, n)
 }
 
 func RGB(r int, g int, b int) string {
-	return fmt.Sprintf("%s38;2;%d;%d;%dm",Esc,r,g,b)
+	return fmt.Sprintf("%s38;2;%d;%d;%dm", Esc, r, g, b)
 }
 
 func BRGB(r int, g int, b int) string {
-	return fmt.Sprintf("%s48;2;%d;%d;%dm",Esc,r,g,b)
+	return fmt.Sprintf("%s48;2;%d;%d;%dm", Esc, r, g, b)
 }
 
 func URGB(r int, g int, b int) string {
-	return fmt.Sprintf("%s58;2;%d;%d;%dm",Esc,r,g,b)
+	return fmt.Sprintf("%s58;2;%d;%d;%dm", Esc, r, g, b)
 }
