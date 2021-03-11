@@ -12,6 +12,39 @@ func SumUint(list []uint) uint {
 	return s
 }
 
+func CountUint(list []uint, num ...uint) int {
+	var c int
+	for _, val := range list {
+		for _, n := range num {
+			if val == n {
+				c++
+				break
+			}
+		}
+	}
+	return c
+}
+
+func FilterUint(list *[]uint, filter ...uint) {
+	var c int
+	var add bool
+	s := make([]uint, len(*list)-CountUint(*list, filter...))
+	for _, val := range *list {
+		add = true
+		for _, f := range filter {
+			if val == f {
+				add = false
+				break
+			}
+		}
+		if add {
+			s[c] = val
+			c++
+		}
+	}
+	*list = s
+}
+
 func UniqueUint(list *[]uint) {
 	var c uint
 	check := make(map[uint]uint)
