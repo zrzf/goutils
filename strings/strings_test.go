@@ -10,12 +10,3 @@ func BenchmarkRemoveBetweenRune(b *testing.B) {
 		RemoveBetweenRune("<abc>abc<abc>", '<', '>', "")
 	}
 }
-
-func BenchmarkSemaphore(b *testing.B) {
-	s := semaphore.New(100)
-	for i := 0; i < b.N; i++ {
-		s.Add()
-		s.Done()
-	}
-	s.Wait()
-}
