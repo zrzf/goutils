@@ -41,7 +41,7 @@ func UniqueStr(list *[]string) {
 	for _, val := range *list {
 		check[val] = 1
 	}
-	res := make([]string,len(check))
+	res := make([]string, len(check))
 	for letter, _ := range check {
 		res[c] = letter
 		c++
@@ -65,7 +65,7 @@ func CountStr(list []string, str ...string) int {
 func FilterStr(list *[]string, filter ...string) {
 	var c int
 	var add bool
-	s := make([]string, len(*list) - CountStr(*list, filter...))
+	s := make([]string, len(*list)-CountStr(*list, filter...))
 	for _, val := range *list {
 		add = true
 		for _, f := range filter {
@@ -91,7 +91,7 @@ func ReverseStr(slice []string) []string {
 	var c int
 	slicelen := len(slice)
 	s := make([]string, slicelen)
-	for i:=slicelen-1;i>=0;i--{
+	for i := slicelen - 1; i >= 0; i-- {
 		s[c] = slice[i]
 		c++
 	}

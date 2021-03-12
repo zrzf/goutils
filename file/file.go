@@ -2,8 +2,8 @@ package file
 
 import (
 	// "os"
-	"strings"
 	"io/ioutil"
+	"strings"
 )
 
 func Read(filename string) string {

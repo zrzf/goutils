@@ -13,14 +13,14 @@ func TestIndexStr(t *testing.T) {
 }
 
 func TestIndexInt(t *testing.T) {
-	a := []int{2,3,1}
+	a := []int{2, 3, 1}
 	if IndexInt(a, 1) != 2 {
 		t.Fatal()
 	}
 }
 
 func TestContainInt(t *testing.T) {
-	a := []int{2,3,1}
+	a := []int{2, 3, 1}
 	if ContainInt(a, 2) != true {
 		t.Fatal()
 	}
@@ -51,7 +51,7 @@ func TestFilterStr(t *testing.T) {
 }
 
 func TestFilterInt(t *testing.T) {
-	a := []int{1,2,3,1,1}
+	a := []int{1, 2, 3, 1, 1}
 	FilterInt(&a, 1)
 	if len(a) != 2 {
 		t.Fatal()
@@ -59,21 +59,21 @@ func TestFilterInt(t *testing.T) {
 }
 
 func TestRangeInt(t *testing.T) {
-	if len(RangeInt(0,5)) != 6 {
+	if len(RangeInt(0, 5)) != 6 {
 		t.Fatal()
 	}
 }
 
 func TestRangeUint(t *testing.T) {
-	if len(RangeUint(0,5)) != 6 {
+	if len(RangeUint(0, 5)) != 6 {
 		t.Fatal()
 	}
 }
 
 func TestShuffleInt(t *testing.T) {
-	a := RangeInt(0,30)
+	a := RangeInt(0, 30)
 	b := make([]int, len(a))
-	copy(b,a)
+	copy(b, a)
 	ShuffleInt(a, 12345)
 	if a[0] == b[0] && a[1] == b[1] {
 		t.Fatal()
