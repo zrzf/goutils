@@ -114,3 +114,23 @@ func ReverseInt(slice []int) []int {
 	}
 	return s
 }
+
+func PopInt(slice *[]int, indexes ...int) {
+	var add bool
+	var c int
+	s := make([]int, len(*slice)-len(indexes))
+	for i, v := range *slice {
+		add = true
+		for _, index := range indexes {
+			if i == index {
+				add = false
+				break
+			}
+		}
+		if add {
+			s[c] = v
+			c++
+		}
+	}
+	*slice = s
+}

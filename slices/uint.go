@@ -72,3 +72,23 @@ func ShuffleUint(slice []uint, seed int64) {
 	rand.Seed(seed)
 	rand.Shuffle(len(slice), func(i, j int) { (slice)[i], (slice)[j] = (slice)[j], (slice)[i] })
 }
+
+func PopUint(slice *[]uint, indexes ...int) {
+	var add bool
+	var c int
+	s := make([]uint, len(*slice)-len(indexes))
+	for i, v := range *slice {
+		add = true
+		for _, index := range indexes {
+			if i == index {
+				add = false
+				break
+			}
+		}
+		if add {
+			s[c] = v
+			c++
+		}
+	}
+	*slice = s
+}

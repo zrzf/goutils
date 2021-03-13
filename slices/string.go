@@ -97,3 +97,23 @@ func ReverseStr(slice []string) []string {
 	}
 	return s
 }
+
+func PopStr(slice *[]string, indexes ...int) {
+	var add bool
+	var c int
+	s := make([]string, len(*slice)-len(indexes))
+	for i, v := range *slice {
+		add = true
+		for _, index := range indexes {
+			if i == index {
+				add = false
+				break
+			}
+		}
+		if add {
+			s[c] = v
+			c++
+		}
+	}
+	*slice = s
+}
