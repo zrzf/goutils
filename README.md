@@ -90,6 +90,14 @@ slices.ChunkInt([1,2,3,4,5], 2)
 slices.ReverseInt([1,2,3,4])
 >>> [4 3 2 1]
 ```
+---
+```PopInt```, ```PopUint```, ```PopStr```
+```go
+slices.PopInt(&[0,1,2,3], 2)
+>>> [0 1 3]
+slices.PopInt(&[0,1,2,3],1,2) // You can also pop multiple indexes
+>>> [0 3]
+```
 
 # color
 ```go
