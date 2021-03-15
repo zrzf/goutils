@@ -2,6 +2,7 @@ package slices
 
 import (
 	"math/rand"
+	"sort"
 )
 
 func ChunkInt(list []int, chunksize int) [][]int {
@@ -116,18 +117,18 @@ func ReverseInt(slice []int) []int {
 }
 
 func PopInt(slice *[]int, indexes ...int) {
-	var add bool
-	var c int
+	var c, ci int
+	var compare bool = true
+	sort.Ints(indexes)
 	s := make([]int, len(*slice)-len(indexes))
+	leni := len(indexes)
 	for i, v := range *slice {
-		add = true
-		for _, index := range indexes {
-			if i == index {
-				add = false
-				break
+		if compare && i == indexes[ci] {
+			ci++
+			if ci == leni {
+				compare = false
 			}
-		}
-		if add {
+		} else {
 			s[c] = v
 			c++
 		}
